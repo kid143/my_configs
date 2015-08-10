@@ -19,25 +19,18 @@ set softtabstop=4
 set ruler
 set backspace=indent,eol,start
 
-" vundle settings
-set nocompatible                " be iMproved
-filetype off                    " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" Vim plugins
+call plug#begin('~/.vim/plugged')
 
-"..................................
-" non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
-"......................................
-filetype plugin indent on
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'vim-scripts/nerdtree-ack', {'on': 'NERDTreeToggle'}
+Plug 'vim-scripts/bufexplorer.zip'
+Plug 'scrooloose/syntastic'
+Plug 'mileszs/ack.vim'
 
-" Github repo
-Bundle 'sickill/vim-monokai'
-Bundle 'scrooloose/nerdtree'
-Bundle 'vim-scripts/nerdtree-ack'
-Bundle 'vim-scripts/bufexplorer.zip'
-Bundle 'scrooloose/syntastic'
+call plug#end()
 
+call plug#end()
 " CTRL-X and SHIFT-Del are Cut
 vnoremap <C-X> "+x
 vnoremap <S-Del> "+x
