@@ -27,6 +27,7 @@ Plug 'vim-scripts/nerdtree-ack', {'on': 'NERDTreeToggle'}
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'scrooloose/syntastic'
 Plug 'mileszs/ack.vim'
+Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
 
@@ -86,3 +87,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['python']
 let g:syntastic_python_python_exec = '/usr/bin/python'
+
+let mapleader = "`"
+
+nnoremap <leader>ss :source $MYVIMRC<CR>
