@@ -1,13 +1,12 @@
 " General
 
 set number
-set linebreak
 set showbreak=+++
-set textwidth=100
 set showmatch
 set visualbell
 set hlsearch
 set smartcase
+set nolinebreak
 set ignorecase
 set incsearch
 set autoindent
@@ -85,7 +84,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['python']
+let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_python_python_exec = '/usr/bin/python'
 
 let mapleader = "`"
