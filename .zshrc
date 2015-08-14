@@ -23,6 +23,10 @@ setopt nohup
 export PS1="$(print '%{\e[1;34m%}%n%{\e[0m%}'):$(print '%{\e[0;34m%}%~%{\e[0m%}')$ "
 export PS2="$(print '%{\e[0;34m%}>%{\e[0m%}')"
 
+autoload -Uz vcs_info
+precmd () { vcs_info }
+setopt prompt_subst
+PS1="\$vcs_info_msg_0_$PS1"
 # Vars used later on by Zsh
 export EDITOR="nano"
 export BROWSER=links
@@ -110,6 +114,7 @@ alias hist="grep '$1' /home/paul/.zsh_history"
 alias irssi="irssi -c irc.freenode.net -n yyz"
 alias mem="free -m"
 alias glog="git log --graph --format=\"%H %s %b <%cn> %cD\""
+alias md="mkdir -p"
 
 # command L equivalent to command |less
 alias -g L='|less' 
