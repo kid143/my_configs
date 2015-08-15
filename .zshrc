@@ -6,9 +6,6 @@ ZSH_THEME=agnoster
 DEFAULT_USER=kid143@OracleVM
 
 source $ZSH/oh-my-zsh.sh
-
-# Aliases
-
 # Set up auto extension stuff
 alias -s html=$BROWSER
 alias -s org=$BROWSER
@@ -47,6 +44,7 @@ alias irssi="irssi -c irc.freenode.net -n yyz"
 alias mem="free -m"
 alias glog="git log --graph --format=\"%H %s %b <%cn> %cD\""
 alias md="mkdir -p"
+alias tmux="tmux -2"
 
 # command L equivalent to command |less
 alias -g L='|less' 
