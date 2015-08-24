@@ -2,8 +2,8 @@
 # Options for Zsh
 
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME=Fino-Time
-DEFAULT_USER=kid143@RMBP_15_Retina
+ZSH_THEME=fino-time
+DEFAULT_USER=kid143@OracleVM
 
 source $ZSH/oh-my-zsh.sh
 # Set up auto extension stuff
@@ -24,6 +24,9 @@ alias -s txt=$EDITOR
 alias -s PKGBUILD=$EDITOR
 
 # Normal aliases
+alias ls='ls --color=auto -F'
+alias lsd='ls -ld *(-/DN)'
+alias lsa='ls -ld .*'
 alias lla='ls -al'
 alias f='find |grep'
 alias c="clear"
@@ -52,3 +55,5 @@ alias -g S='&> /dev/null &'
 # Plugins
 plugins=(git, python, pip, gnu-utils, history-substring-search, zsh-syntax-highlighting, ubuntu, docker, vi-mode, vim-interaction, cp)
 # End of lines added by compinstall
+
+export PATH="$PATH:$HOME/.rvm/bin:$HOME/.linuxbrew/bin" # Add RVM to PATH for scripting
