@@ -5,6 +5,11 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=Fino-Time
 DEFAULT_USER=kid143@RMBP_15_Retina
 
+# Online help support
+unalias run-help
+autoload run-help
+HELPDIR=/usr/local/share/zsh/help
+
 source $ZSH/oh-my-zsh.sh
 # Set up auto extension stuff
 alias -s html=$BROWSER
@@ -50,5 +55,7 @@ alias -g L='|less'
 alias -g S='&> /dev/null &'
 
 # Plugins
-plugins=(git, python, pip, gnu-utils, history-substring-search, zsh-syntax-highlighting, ubuntu, docker, vi-mode, vim-interaction, cp)
+plugins=(git, python, pip, tmux, gnu-utils, history-substring-search, zsh-syntax-highlighting, ubuntu, docker, vi-mode, vim-interaction, cp)
 # End of lines added by compinstall
+
+export PATH="$PATH:$HOME/.rvm/bin:/usr/local/sbin" # Add RVM to PATH for scripting

@@ -27,6 +27,7 @@ Plug 'vim-scripts/bufexplorer.zip'
 Plug 'scrooloose/syntastic'
 Plug 'mileszs/ack.vim'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
@@ -70,6 +71,10 @@ noremap <S-m> :NERDTreeToggle<CR>
 " bufexploer
 noremap <CR> :BufExplorer<CR>
 
+" Monokai theme
+syntax enable
+colorscheme monokai
+
 " Syntastic settings
 
 set statusline+=%#warningmsg#
@@ -81,7 +86,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pyflakes']
-let g:syntastic_python_python_exec = '/usr/bin/python'
+let g:syntastic_python_python_exec = '/usr/local/bin/python'
+let g:syntastic_javascript_checkers = ['jslint']
+let g:syntastic_enable_signs = 1
+
+let g:jsx_ext_required = 0
 
 let mapleader = "`"
 
