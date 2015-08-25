@@ -65,6 +65,10 @@ noremap <C-Q>   	<C-V>
 nmap <F7> :tabn<CR>
 nmap <F8> :tabp<CR>
 
+" Monokai Theme
+syntax enable
+colorscheme monokai
+
 " NERD Tree
 noremap <S-m> :NERDTreeToggle<CR>
 
@@ -86,11 +90,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pyflakes']
-let g:syntastic_python_python_exec = '/usr/local/bin/python'
-let g:syntastic_javascript_checkers = ['jslint']
+let g:syntastic_python_python_exec = '/usr/bin/python'
+let g:syntastic_javscript_checkers = ['eslint']
 let g:syntastic_enable_signs = 1
 
-let g:jsx_ext_required = 0
+let g:jsx_ext_required = 0 " allow jsx in normal js files
 
 let mapleader = "`"
 
