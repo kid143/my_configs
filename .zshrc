@@ -3,6 +3,7 @@
 
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=Fino-Time
+DEFAULT_USER=kid143@RMBP_15_Retina
 
 # Online help support
 unalias run-help
@@ -28,9 +29,6 @@ alias -s txt=$EDITOR
 alias -s PKGBUILD=$EDITOR
 
 # Normal aliases
-alias ls='ls --color=auto -F'
-alias lsd='ls -ld *(-/DN)'
-alias lsa='ls -ld .*'
 alias lla='ls -al'
 alias f='find |grep'
 alias c="clear"
@@ -57,7 +55,11 @@ alias -g L='|less'
 alias -g S='&> /dev/null &'
 
 # Plugins
-plugins=(git, python, pip, tmux, gnu-utils, history-substring-search, zsh-syntax-highlighting, ubuntu, docker, vi-mode, vim-interaction, cp)
+plugins=(osx, man, git, python, pip, tmux, gnu-utils, history-substring-search, zsh-syntax-highlighting, ubuntu, docker, vi-mode, vim-interaction, cp)
 # End of lines added by compinstall
 
 export PATH="$PATH:$HOME/.rvm/bin:/usr/local/sbin" # Add RVM to PATH for scripting
+
+export DOCKER_HOST=192.168.99.100:2376
+export DOCKER_TLS_VERIFY=1
+export DOCKER_CERT_PATH=$HOME/.docker/machine/certs
