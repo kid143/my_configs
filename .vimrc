@@ -28,6 +28,7 @@ Plug 'scrooloose/syntastic'
 Plug 'mileszs/ack.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'mxw/vim-jsx'
+Plug 'bling/vim-airline'
 
 call plug#end()
 
@@ -67,17 +68,14 @@ nmap <F8> :tabp<CR>
 
 " Monokai Theme
 syntax enable
-colorscheme monokai
+colorscheme molokai
+let g:molokai_original = 1
 
 " NERD Tree
 noremap <S-m> :NERDTreeToggle<CR>
 
 " bufexploer
 noremap <CR> :BufExplorer<CR>
-
-" Monokai theme
-syntax enable
-colorscheme monokai
 
 " Syntastic settings
 
@@ -92,9 +90,18 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_python_python_exec = '/usr/bin/python'
 let g:syntastic_javscript_checkers = ['eslint']
-let g:syntastic_enable_signs = 1
 
 let g:jsx_ext_required = 0 " allow jsx in normal js files
+
+" Powerline
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
+set nocompatible
+set laststatus=2
+set t_Co=256
+let g:Powerline_symbols='fancy'
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
 
 let mapleader = "`"
 

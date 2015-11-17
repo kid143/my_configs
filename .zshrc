@@ -2,13 +2,8 @@
 # Options for Zsh
 
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME=Fino-Time
-DEFAULT_USER=kid143@RMBP_15_Retina
-
-# Online help support
-unalias run-help
-autoload run-help
-HELPDIR=/usr/local/share/zsh/help
+ZSH_THEME=agnoster
+DEFAULT_USER=kid143@RX78-2
 
 source $ZSH/oh-my-zsh.sh
 # Set up auto extension stuff
@@ -29,6 +24,9 @@ alias -s txt=$EDITOR
 alias -s PKGBUILD=$EDITOR
 
 # Normal aliases
+alias ls='ls -FG'
+alias lsd='ls -ld *(-/DN)'
+alias lsa='ls -ld .*'
 alias lla='ls -al'
 alias f='find |grep'
 alias c="clear"
@@ -55,11 +53,13 @@ alias -g L='|less'
 alias -g S='&> /dev/null &'
 
 # Plugins
-plugins=(osx, man, git, python, pip, tmux, gnu-utils, history-substring-search, zsh-syntax-highlighting, ubuntu, docker, vi-mode, vim-interaction, cp)
+plugins=(git, python, pip, gnu-utils, history-substring-search, zsh-syntax-highlighting, ubuntu, docker, vi-mode, vim-interaction, cp)
 # End of lines added by compinstall
 
-export PATH="$PATH:$HOME/.rvm/bin:/usr/local/sbin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin:$HOME/.linuxbrew/bin" # Add RVM to PATH for scripting
 
-export DOCKER_HOST=192.168.99.100:2376
-export DOCKER_TLS_VERIFY=1
-export DOCKER_CERT_PATH=$HOME/.docker/machine/certs
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="/Users/kid143/.docker/machine/machines/default"
+export DOCKER_MACHINE_NAME="default"
+
