@@ -34,8 +34,6 @@ Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
-call plug#end()
-
 " Tab support
 nmap <F7> :tabn<CR>
 nmap <F8> :tabp<CR>
