@@ -22,6 +22,8 @@ set backspace=indent,eol,start
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/nerdtree-ack', {'on': 'NERDTreeToggle'}
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'scrooloose/syntastic'
@@ -31,6 +33,7 @@ Plug 'mxw/vim-jsx'
 Plug 'bling/vim-airline'
 Plug 'kchmck/vim-coffee-script'
 Plug 'Yggdroot/indentLine'
+Plug 'digitaltoad/vim-jade'
 
 call plug#end()
 
@@ -48,6 +51,19 @@ noremap <S-m> :NERDTreeToggle<CR>
 
 " bufexploer
 noremap <CR> :BufExplorer<CR>
+
+" Tagbar
+let g:tagbar_type_coffee = {
+    \ 'ctagstype' : 'coffee',
+    \ 'kinds'     : [
+        \ 'c:classes',
+        \ 'm:methods',
+        \ 'f:functions',
+        \ 'v:variables',
+        \ 'f:fields',
+    \ ]
+\ }
+noremap <S-t> :TagbarToggle<CR>
 
 " Powerline
 set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
@@ -73,6 +89,7 @@ let g:syntastic_javscript_checkers = ['eslint']
 let g:jsx_ext_required = 0 " allow jsx in normal js files
 
 " Airline
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 " IndentLine
