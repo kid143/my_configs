@@ -2,7 +2,7 @@
 # Options for Zsh
 
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME=agnoster
+ZSH_THEME=robbyrussell
 DEFAULT_USER=kid143@RX78-2
 
 source $ZSH/oh-my-zsh.sh
@@ -62,3 +62,8 @@ export DOCKER_HOST="tcp://192.168.99.100:2376"
 export DOCKER_CERT_PATH="/Users/kid143/.docker/machine/machines/default"
 export DOCKER_MACHINE_NAME="default"
 
+# Powerline prompt
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POERLINE_BASH_SELECT=1
+. /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
