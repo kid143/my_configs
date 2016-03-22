@@ -52,10 +52,10 @@ alias -g L='|less'
 alias -g S='&> /dev/null &'
 
 # Plugins
-plugins=(git, python, pip, gnu-utils, history-substring-search, zsh-syntax-highlighting, ubuntu, docker, vi-mode, vim-interaction, cp)
+plugins=(brew, brew-cask, coffee, node, git, python, pip, gnu-utils, history-substring-search, zsh-syntax-highlighting, ubuntu, docker, vi-mode, vim-interaction, cp)
 # End of lines added by compinstall
 
-export PATH="$PATH:$HOME/.rvm/bin:$HOME/.linuxbrew/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin:$HOME/bin" # Add RVM to PATH for scripting
 
 export DOCKER_TLS_VERIFY="1"
 export DOCKER_HOST="tcp://192.168.99.100:2376"
@@ -63,7 +63,10 @@ export DOCKER_CERT_PATH="/Users/kid143/.docker/machine/machines/default"
 export DOCKER_MACHINE_NAME="default"
 
 # Powerline prompt
-powerline-daemon -q
+ps x | grep "powerline-daemon" | grep -v grep > /dev/null
+if [ $? -ne 0 ]; then
+    powerline-daemon -q
+fi
 POWERLINE_BASH_CONTINUATION=1
-POERLINE_BASH_SELECT=1
+POWERLINE_BASH_SELECT=1
 . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
