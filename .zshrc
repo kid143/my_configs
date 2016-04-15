@@ -62,6 +62,8 @@ export DOCKER_HOST="tcp://192.168.99.100:2376"
 export DOCKER_CERT_PATH="/Users/kid143/.docker/machine/machines/default"
 export DOCKER_MACHINE_NAME="default"
 
+# Homebrew 0.9.9 above requires new config
+export HOMEBREW_GITHUB_API_TOKEN="712bef17bb624a8a15ef4c481c0af5e7e4f7330a"
 # Powerline prompt
 ps x | grep "powerline-daemon" | grep -v grep > /dev/null
 if [ $? -ne 0 ]; then
@@ -70,3 +72,7 @@ fi
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+
+# Virtualenvwrapper
+export WORKON_HOME=~/python_envs
+source `which virtualenvwrapper.sh`
