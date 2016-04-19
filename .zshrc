@@ -23,7 +23,8 @@ export DOCKER_CERT_PATH="/Users/kid143/.docker/machine/machines/default"
 export DOCKER_MACHINE_NAME="default"
 
 # Homebrew 0.9.9 above requires new config
-export HOMEBREW_GITHUB_API_TOKEN="ff2a97687f011d38e4573e2710ba465b02239b31"
+. $HOME/.homebrew_github_api
+
 # Powerline prompt
 ps x | grep "powerline-daemon" | grep -v grep > /dev/null
 if [ $? -ne 0 ]; then
