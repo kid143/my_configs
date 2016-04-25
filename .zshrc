@@ -59,5 +59,7 @@ POWERLINE_BASH_SELECT=1
 . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Virtualenvwrapper
-export WORKON_HOME=~/python_envs
-source `which virtualenvwrapper.sh`
+if [[ $UID != 0 || $EUID != 0 ]]; then
+  export WORKON_HOME=~/python_envs
+  source `which virtualenvwrapper.sh`
+fi
