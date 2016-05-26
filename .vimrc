@@ -29,11 +29,12 @@ Plug 'vim-scripts/bufexplorer.zip'
 Plug 'scrooloose/syntastic'
 Plug 'mileszs/ack.vim'
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'mxw/vim-jsx'
-Plug 'bling/vim-airline'
-Plug 'kchmck/vim-coffee-script'
+Plug 'mxw/vim-jsx', {'for': 'jsx'}
+Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'Yggdroot/indentLine'
-Plug 'digitaltoad/vim-jade'
+Plug 'digitaltoad/vim-jade', {'for': 'jade'}
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
