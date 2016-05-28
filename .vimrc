@@ -24,10 +24,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-scripts/nerdtree-ack', {'on': 'NERDTreeToggle'}
+Plug 'rking/ag.vim'
+Plug 'taiansu/nerdtree-ag', {'on': 'NERDTreeToggle'}
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'scrooloose/syntastic'
-Plug 'mileszs/ack.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'mxw/vim-jsx', {'for': 'jsx'}
 Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
