@@ -35,6 +35,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'digitaltoad/vim-jade', {'for': 'jade'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
@@ -42,10 +43,13 @@ call plug#end()
 nmap <F7> :tabn<CR>
 nmap <F8> :tabp<CR>
 
-" Monokai Theme
+" Color Scheme
 syntax enable
-colorscheme molokai
-let g:molokai_original = 1
+" colorscheme molokai
+" let g:molokai_original = 1
+set background=light
+colorscheme PaperColor
+let g:airline_theme='papercolor'
 
 " NERD Tree
 noremap <S-m> :NERDTreeToggle<CR>
