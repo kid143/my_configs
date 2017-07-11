@@ -24,16 +24,18 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-scripts/nerdtree-ack', {'on': 'NERDTreeToggle'}
+Plug 'rking/ag.vim'
+Plug 'taiansu/nerdtree-ag', {'on': 'NERDTreeToggle'}
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'scrooloose/syntastic'
-Plug 'mileszs/ack.vim'
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'mxw/vim-jsx'
-Plug 'bling/vim-airline'
-Plug 'kchmck/vim-coffee-script'
+Plug 'mxw/vim-jsx', {'for': 'jsx'}
+Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'Yggdroot/indentLine'
-Plug 'digitaltoad/vim-jade'
+Plug 'digitaltoad/vim-jade', {'for': 'jade'}
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
@@ -41,10 +43,13 @@ call plug#end()
 nmap <F7> :tabn<CR>
 nmap <F8> :tabp<CR>
 
-" Monokai Theme
+" Color Scheme
 syntax enable
-colorscheme molokai
-let g:molokai_original = 1
+" colorscheme molokai
+" let g:molokai_original = 1
+set background=dark
+colorscheme PaperColor
+let g:airline_theme='papercolor'
 
 " NERD Tree
 noremap <S-m> :NERDTreeToggle<CR>

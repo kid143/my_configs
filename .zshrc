@@ -36,18 +36,25 @@ ZSH_HIGHLIGHT_STYLES[line]='bold'
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 
-plugins=(catimg common-aliases command-not-found osx brew brew-cask coffee node git colored-man-pages docker vi-mode vim-interaction zsh-syntax-highlighting colorize history-substring-search zsh-autosuggestions)
+# LS_COLORS
+eval $(dircolors -b /Users/huangchengwei/.dircolors)
+
+# Stop ssh-agent
+
+ps x | grep ssh-agent | grep -v grep | xargs kill > /dev/null 2>&1
+
+# Plugins
+plugins=(gpg-agent catimg common-aliases command-not-found osx brew brew-cask node git colored-man-pages docker docker-compose vim-interaction zsh-syntax-highlighting colorize history-substring-search zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
+
+alias ls="gls --color=auto"
 
 # End of lines added by compinstall
 
 export DOCKER_TLS_VERIFY="1"
 export DOCKER_HOST="tcp://192.168.99.100:2376"
-export DOCKER_CERT_PATH="/Users/kid143/.docker/machine/machines/default"
+export DOCKER_CERT_PATH="/Users/huangchengwei/.docker/machine/machines/default"
 export DOCKER_MACHINE_NAME="default"
-
-# Homebrew 0.9.9 above requires new config
-. $HOME/.homebrew_github_api
 
 # Powerline prompt
 ps x | grep "powerline-daemon" | grep -v grep > /dev/null
@@ -62,4 +69,12 @@ POWERLINE_BASH_SELECT=1
 if [[ $UID != 0 || $EUID != 0 ]]; then
   export WORKON_HOME=~/python_envs
   source `which virtualenvwrapper.sh`
+fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+test -r $(brew --prefix nvm)/nvm.sh
+if [[ $? -eq 0 ]];then
+    export NVM_DIR="$HOME/.nvm"
+    . "$(brew --prefix nvm)/nvm.sh"
 fi
